@@ -7,13 +7,13 @@ import (
 )
 
 const (
-	ALPHABET_LENGTH int = 26
-	LETTERS string = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+	ALPHABET_LENGTH int    = 26
+	LETTERS         string = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 )
 
 var (
-	input		= flag.String("input", "", "plaintext / ciphertext")
-	key			= flag.String("key", "", "encryption key string")
+	input   = flag.String("input", "", "plaintext / ciphertext")
+	key     = flag.String("key", "", "encryption key string")
 	decrypt = flag.Bool("decrypt", false, "decrypt input with key instead of encrypt")
 )
 
@@ -24,7 +24,7 @@ func vigenereCipher(input string, key string, decrypt bool) string {
 	output := ""
 	for _, m := range chars {
 		index := int(m - 'A')
-		offset := int(k[keyPos] - 'A') % ALPHABET_LENGTH
+		offset := int(k[keyPos]-'A') % ALPHABET_LENGTH
 		if decrypt {
 			index -= offset
 		} else {
