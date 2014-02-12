@@ -15,4 +15,4 @@ The tool encrypts be default the argument given by input with the given key:
 To decrypt a string, give the ciphertext as input with the key and use the *decrypt* flag:
 
 	$ vigenere-cipher -input="VUJLXFCDC" -key="g00dk3y" -decrypt
-	PLAINTEXT
+	>> PLAINTEXT
